@@ -1,18 +1,21 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { compareToValidator } from 'src/app/services/compareTo';
+import { Router } from '@angular/router';
+import { ICliente } from 'src/app/models/cliente.model';
+import { RestnodeService } from 'src/app/services/restnode.service';
+import { compareToValidator } from 'src/app/validators/compareTo';
 
 @Component({
   selector: 'app-registro-component',
-  templateUrl: './registro-component.component.html',
-  styleUrls: ['./registro-component.component.css']
+  templateUrl: './registro.component.html',
+  styleUrls: ['./registro.component.css']
 })
 export class RegistroComponentComponent {
 
   public miForm:FormGroup;
   public enviado:boolean = false;
 
-  constructor(){
+  constructor(private restNode:RestnodeService, private router:Router){
     this.miForm = new FormGroup(
       {
         nombre: new FormControl('', [ Validators.required, Validators.minLength(3), Validators.maxLength(50) ]  ),
@@ -28,7 +31,22 @@ export class RegistroComponentComponent {
   }
 
   registrarCliente(){
-    
+    console.log(this.miForm)
+
+    if(this.miForm.status === 'VALID'){
+      const _respuesta =  this.restNode.registro(this.miForm.value as ICliente)
+      
+      _respuesta.subscribe({
+        next: value => {
+          console.log(value)
+          this.router.navigate(['/Cliente/RegistroOK'])
+        },
+        error: err => {
+          console.log('errores... ', err)
+        }
+      })
+    }
+
   }
 
 

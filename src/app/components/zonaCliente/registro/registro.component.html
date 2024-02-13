@@ -1,0 +1,121 @@
+
+<div class="container">
+  <div class="row">
+      <div class="col">
+          <h2><strong>Registrate en Agapea.com</strong></h2>
+          <p>Tienes tres opciones para registrarte en agapea.com. Tienes tres opciones para registrarte en agapea.com. y disfrutar de nuestros servicios y ventajas. </p>
+          <p>Puedes hacerlo a través de las redes sociales en 4 segundos. O registrarte con nosotros, no tardarás más de 40 segundos en hacerlo. Solo tendrás que rellenar el siguiente formulario con tus datos. </p>
+      </div>
+  </div>
+
+  <div class="row">
+      <div class="col">
+          <p>Registro con <img src="../../../assets/images/agapea-logo.svg" width="186px" height="40px" /></p>
+      </div>
+  </div>   
+  <hr />
+
+  <div class="row">
+      <div class="col">
+          <form [formGroup]="miForm" (ngSubmit)="registrarCliente()">
+              <div class="row">
+                  <div class="col-md-6">
+                      <label for="email" class="form-label">Correo electrónico *</label>
+                      <input formControlName="email" type="email" id="email" class="form-control" required placeholder="mail@mail.com">
+                      <!-- errores de validacion-->
+                      <span class="text-danger" *ngIf="miForm.controls['email'].errors?.['required'] &&  miForm.controls['email'].touched">* Email Obligatorio</span>
+                      <span class="text-danger" *ngIf="miForm.controls['email'].errors?.['email'] && miForm.controls['email'].touched">* Formato de email invalido</span>
+                  </div>
+                  <div class="col-md-6">
+                      <label for="repemail" class="form-label">Repetir correo electrónico *</label>
+                      <input formControlName="repemail" type="email" id="repemail" class="form-control" required placeholder="mail@mail.com">
+                      <!-- errores de validacion-->
+                      <span class="text-danger" *ngIf="miForm.controls['repemail'].errors?.['required'] &&  miForm.controls['repemail'].touched">* Email Obligatorio</span>
+                      <span class="text-danger" *ngIf="miForm.controls['repemail'].errors?.['email'] && miForm.controls['repemail'].touched">* Formato de email invalido</span>
+                      <span class="text-danger" *ngIf="miForm.controls['repemail'].errors?.['compareTo'] && miForm.controls['repemail'].touched">* No coinciden los emails</span>
+                  </div>
+              </div>
+
+              <div class="row">
+                  <div class="col-md-6">
+                      <label for="password" class="form-label">Contraseña *</label>
+                      <input formControlName="password" type="password" id="password" class="form-control" required placeholder="••••••••">
+                      <!-- errores de validacion-->
+                      <span class="text-danger" *ngIf="miForm.controls['password'].errors?.['required'] &&  miForm.controls['password'].touched">* Contraseña obligatoria</span>
+                      <span class="text-danger" *ngIf="miForm.controls['password'].errors?.['minlength'] && miForm.controls['password'].touched">* Minimo 5 caracteres en contraseña</span>
+                      <span class="text-danger" *ngIf="miForm.controls['password'].errors?.['pattern'] && miForm.controls['password'].touched">* Contraseña debe contener 1 letra MAYS, 1 numero y un caracter alfanumerico</span>
+                  </div>
+                  <div class="col-md-6">
+                      <label for="repassword" class="form-label">Repetir contraseña *</label>
+                      <input formControlName="repassword" type="password" id="repassword" class="form-control" required placeholder="••••••••">
+                      <!-- errores de validacion-->
+                      <span class="text-danger" *ngIf="miForm.controls['repassword'].errors?.['required'] &&  miForm.controls['repassword'].touched">* Contraseña obligatoria</span>
+                      <span class="text-danger" *ngIf="miForm.controls['repassword'].errors?.['minlength'] && miForm.controls['repassword'].touched">* Minimo 5 caracteres en contraseña</span>
+                      <span class="text-danger" *ngIf="miForm.controls['repassword'].errors?.['pattern'] && miForm.controls['repassword'].touched">* Contraseña debe contener 1 letra MAYS, 1 numero y un caracter alfanumerico</span>
+                      <span class="text-danger" *ngIf="miForm.controls['repassword'].errors?.['compareTo'] && miForm.controls['repassword'].touched">* Las contraseñas no coinciden</span>
+                  </div>
+              </div>
+
+              <div class="row">
+                  <div class="col-md-6">
+                      <label for="nombre" class="form-label">Nombre *</label>
+                      <input formControlName="nombre" type="text" id="nombre" class="form-control" required placeholder="Mi nombre">
+                      <!-- errores de validacion-->
+                      <span class="text-danger" *ngIf="miForm.controls['nombre'].errors?.['required'] &&  miForm.controls['nombre'].touched">* Nombre Obligatorio</span>
+                      <span class="text-danger" *ngIf="miForm.controls['nombre'].errors?.['minlength'] && miForm.controls['nombre'].touched">* Numero minimo de caracteres: 3</span>
+                      <span class="text-danger" *ngIf="miForm.controls['nombre'].errors?.['maxlength'] && miForm.controls['nombre'].touched">* Numero maximo de caracteres: 50</span>
+                  </div>
+                  <div class="col-md-6">
+                      <label for="apellidos" class="form-label">Apellidos *</label>
+                      <input formControlName="apellidos" type="text" id="apellidos" class="form-control" required placeholder="Mis apellidos">
+                      <!-- errores de validacion-->
+                      <span class="text-danger" *ngIf="miForm.controls['apellidos'].errors?.['required'] &&  miForm.controls['apellidos'].touched">* Apellidos Obligatorios</span>
+                      <span class="text-danger" *ngIf="miForm.controls['apellidos'].errors?.['minlength'] && miForm.controls['apellidos'].touched">* Apellidos minimo de caracteres: 3</span>
+                      <span class="text-danger" *ngIf="miForm.controls['apellidos'].errors?.['maxlength'] && miForm.controls['apellidos'].touched">* Apellidos maximo de caracteres: 200</span>
+                  </div>
+              </div>
+
+              <div class="row">
+                  <div class="col-md-6">
+                      <label for="login" class="form-label">Usuario *</label>
+                      <input formControlName="login" type="text" id="login" class="form-control" required placeholder="Mi alias">
+                      <!-- errores de validacion-->
+                      <span class="text-danger" *ngIf="miForm.controls['login'].errors?.['required'] &&  miForm.controls['login'].touched">* Usuario Obligatorio</span>
+                      <span class="text-danger" *ngIf="miForm.controls['login'].errors?.['minlength'] && miForm.controls['login'].touched">* Numero minimo de caracteres: 3</span>
+                      <span class="text-danger" *ngIf="miForm.controls['login'].errors?.['maxlength'] && miForm.controls['login'].touched">* Numero maximo de caracteres: 25</span>
+                  </div>        
+                  <div class="col-md-6">
+                      <label for="tlfno" class="form-label">Telefono (opcional)</label>
+                      <input formControlName="telefono" type="text" id="tlfno" class="form-control"  placeholder="Mi telefono(opcional)">
+                  </div>        
+              </div>
+      
+              <p><small class="text-mutted">Agapea S.A se compromete a garantizar la seguridad de tus datos y a guardarlos en la más estricta confidencialidad.</small></p>
+              <hr>
+
+               <div class="col-12">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="checkInfo">
+                  <label class="form-check-label" for="checkInfo">                    
+                    Deseo recibir información sobre libros, novedades y eventos de Agapea.com o sus librerías.                
+                  </label>
+                </div>
+              </div>
+
+               <div class="col-12">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="checkCondiciones" name="condUso" value="true" checked>
+                  <label class="form-check-label" for="checkCondiciones">                    
+                    Acepto las condiciones de uso y nuestra politica de cookies.               
+                  </label>
+                </div>
+              </div>
+
+              <div class="col-12 mt-3">
+                  <button type="submit" class="btn btn-primary btn-lg" [disabled]="miForm.status!=='VALID'">Registrarme</button>
+              </div>
+
+          </form>
+      </div>
+  </div>
+</div>
