@@ -14,6 +14,7 @@ export class RegistroComponentComponent {
 
   public miForm:FormGroup;
   public enviado:boolean = false;
+  public cliente!:ICliente;
 
   constructor(private restNode:RestnodeService, private router:Router){
     this.miForm = new FormGroup(
@@ -34,7 +35,24 @@ export class RegistroComponentComponent {
     console.log(this.miForm)
 
     if(this.miForm.status === 'VALID'){
-      const _respuesta =  this.restNode.registro(this.miForm.value as ICliente)
+      this.cliente = {
+        apellidos : this.miForm.get('apellido')?.value,
+        cuenta : {
+          cuentaActiva : false,
+          email: this.miForm.get('email')?.value,
+          imagenAvatarBASE64: '',
+          login: this.miForm.get('login')?.value,
+          password: this.miForm.get('password')?.value,
+        },
+        fechaNacimiento: new Date,
+        nombre: this.miForm.get('nombre')?.value,
+        telefono: this.miForm.get('telefono')?.value,
+        descripcion: '',
+        direcciones: [],
+        genero: '',
+        pedidos: []
+      }
+      const _respuesta =  this.restNode.registro(this.cliente)
       
       _respuesta.subscribe({
         next: value => {
