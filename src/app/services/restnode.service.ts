@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ICliente } from '../models/cliente.model';
-import { Observable } from 'rxjs';
+import { Observable, lastValueFrom } from 'rxjs';
 import { IRestMessage } from '../models/restMessage.model';
 
 @Injectable({
@@ -22,6 +22,29 @@ export class RestnodeService {
         headers: new HttpHeaders({'Content-Type': 'application/json'})
       }
     )
+  }
+
+  public activarCuenta(mode:string, code:string, key:string): Observable<IRestMessage> {
+    return this._httpCliente.get(
+      `http://localhost:3000/api/Cliente/ActivarCuenta?mode=${mode}&code=${code}&key=${key}`) as Observable<IRestMessage>
+  }
+
+  public login(credenciales: {email: string; password: string; }): Promise<IRestMessage>
+  {
+    return lastValueFrom(
+      this._httpCliente.post<IRestMessage>(
+        'http://localhost:3000/api/Cliente/Login',
+        credenciales,
+        {
+          headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
+        }
+      )
+    )
+  }
+
+  public comprobarEmail(email:string): Observable<IRestMessage> {
+    console.log(email)
+    return this._httpCliente.get(`http://localhost:3000/api/Cliente/ComprobarEmail?email=${email}`) as Observable<IRestMessage>
   }
 
   //#endregion

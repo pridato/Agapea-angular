@@ -7,12 +7,19 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponentComponent } from './components/zonaCliente/login/login.component';
 import { RegistroComponentComponent } from './components/zonaCliente/registro/registro.component';
 import { HttpClientModule } from '@angular/common/http';
+import { RegistroOKComponent } from './components/zonaCliente/registroOK/registro-ok.component';
+import { RestnodeService } from './services/restnode.service';
+import { ComprobarexistemailDirective } from './directives/comprobarexistemail.directive';
+import { EmailfilterdomainDirective } from './directives/emailfilterdomain.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponentComponent,
-    RegistroComponentComponent
+    RegistroComponentComponent,
+    RegistroOKComponent,
+    ComprobarexistemailDirective,
+    EmailfilterdomainDirective
   ],
   imports: [
     BrowserModule,
@@ -21,7 +28,9 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    RestnodeService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
