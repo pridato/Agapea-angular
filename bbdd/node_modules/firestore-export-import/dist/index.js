@@ -1,0 +1,11 @@
+"use strict";var __assign=(this&&this.__assign)||function(){__assign=Object.assign||function(t){for(var s,i=1,n=arguments.length;i<n;i++){s=arguments[i];for(var p in s)if(Object.prototype.hasOwnProperty.call(s,p))
+t[p]=s[p];}
+return t;};return __assign.apply(this,arguments);};Object.defineProperty(exports,"__esModule",{value:true});exports.backups=exports.restore=exports.backupFromDoc=exports.backup=exports.initializeFirebaseApp=void 0;var app_1=require("firebase-admin/app");var firestore_1=require("firebase-admin/firestore");var export_js_1=require("./export.js");var import_js_1=require("./import.js");var initializeFirebaseApp=function(serviceAccount,name,options){if(name===void 0){name='[DEFAULT]';}
+if(options===void 0){options={};}
+var apps=(0,app_1.getApps)();if(apps.length===0||(apps.length>0&&apps[0].name!==name)){var app=void 0;if(serviceAccount){app=(0,app_1.initializeApp)({credential:(0,app_1.cert)(serviceAccount),databaseURL:serviceAccount['databaseURL'],},name);}
+else{app=(0,app_1.initializeApp)(undefined,name);}
+var firestore=(0,firestore_1.getFirestore)(app);firestore.settings(__assign({timestampsInSnapshots:true},options.firestore));}
+else{console.warn("Firebase App exist. Return default firestore instance");}
+return(0,firestore_1.getFirestore)(apps[0]);};exports.initializeFirebaseApp=initializeFirebaseApp;var backup=function(db,collectionName,options){return(0,export_js_1.backupService)(db,collectionName,options);};exports.backup=backup;var backupFromDoc=function(db,collectionName,documentName,options){return(0,export_js_1.backupFromDocService)(db,collectionName,documentName,options);};exports.backupFromDoc=backupFromDoc;var restore=function(db,fileName,options){if(options===void 0){options={};}
+return(0,import_js_1.restoreService)(db,fileName,options);};exports.restore=restore;var backups=function(db,collectionNameArray,options){if(collectionNameArray===void 0){collectionNameArray=[];}
+return(0,export_js_1.getAllCollectionsService)(db,collectionNameArray,options);};exports.backups=backups;

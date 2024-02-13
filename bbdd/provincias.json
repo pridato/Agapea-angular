@@ -1,0 +1,265 @@
+{
+"provincias":
+              [
+                {
+                  "CCOM": "16",
+                  "CPRO": "01",
+                  "PRO": "ÁLAVA"
+                },
+                {
+                  "CCOM": "07",
+                  "CPRO": "02",
+                  "PRO": "ALBACETE"
+                },
+                {
+                  "CCOM": "10",
+                  "CPRO": "03",
+                  "PRO": "ALICANTE"
+                },
+                {
+                  "CCOM": "01",
+                  "CPRO": "04",
+                  "PRO": "ALMERÍA"
+                },
+                {
+                  "CCOM": "03",
+                  "CPRO": "33",
+                  "PRO": "PRINCIPADO DE ASTURIAS"
+                },
+                {
+                  "CCOM": "08",
+                  "CPRO": "05",
+                  "PRO": "ÁVILA"
+                },
+                {
+                  "CCOM": "11",
+                  "CPRO": "06",
+                  "PRO": "BADAJOZ"
+                },
+                {
+                  "CCOM": "09",
+                  "CPRO": "08",
+                  "PRO": "BARCELONA"
+                },
+                {
+                  "CCOM": "08",
+                  "CPRO": "09",
+                  "PRO": "BURGOS"
+                },
+                {
+                  "CCOM": "11",
+                  "CPRO": "10",
+                  "PRO": "CÁCERES"
+                },
+                {
+                  "CCOM": "01",
+                  "CPRO": "11",
+                  "PRO": "CÁDIZ"
+                },
+                {
+                  "CCOM": "06",
+                  "CPRO": "39",
+                  "PRO": "CANTABRIA"
+                },
+                {
+                  "CCOM": "10",
+                  "CPRO": "12",
+                  "PRO": "CASTELLÓN"
+                },
+                {
+                  "CCOM": "07",
+                  "CPRO": "13",
+                  "PRO": "CIUDAD REAL"
+                },
+                {
+                  "CCOM": "01",
+                  "CPRO": "14",
+                  "PRO": "CÓRDOBA"
+                },
+                {
+                  "CCOM": "12",
+                  "CPRO": "15",
+                  "PRO": "LA CORUÑA"
+                },
+                {
+                  "CCOM": "07",
+                  "CPRO": "16",
+                  "PRO": "CUENCA"
+                },
+                {
+                  "CCOM": "09",
+                  "CPRO": "17",
+                  "PRO": "GERONA"
+                },
+                {
+                  "CCOM": "01",
+                  "CPRO": "18",
+                  "PRO": "GRANA_A"
+                },
+                {
+                  "CCOM": "07",
+                  "CPRO": "19",
+                  "PRO": "GUADALAJARA"
+                },
+                {
+                  "CCOM": "16",
+                  "CPRO": "20",
+                  "PRO": "GUIPÚZCOA"
+                },
+                {
+                  "CCOM": "01",
+                  "CPRO": "21",
+                  "PRO": "HUELVA"
+                },
+                {
+                  "CCOM": "02",
+                  "CPRO": "22",
+                  "PRO": "HUESCA"
+                },
+                {
+                  "CCOM": "04",
+                  "CPRO": "07",
+                  "PRO": "ISLAS BALEARES"
+                },
+                {
+                  "CCOM": "01",
+                  "CPRO": "23",
+                  "PRO": "JAÉN"
+                },
+                {
+                  "CCOM": "08",
+                  "CPRO": "24",
+                  "PRO": "LEÓN"
+                },
+                {
+                  "CCOM": "09",
+                  "CPRO": "25",
+                  "PRO": "LÉRIDA"
+                },
+                {
+                  "CCOM": "12",
+                  "CPRO": "27",
+                  "PRO": "LUGO"
+                },
+                {
+                  "CCOM": "14",
+                  "CPRO": "28",
+                  "PRO": "COMUNIDAD DE MADRID"
+                },
+                {
+                  "CCOM": "01",
+                  "CPRO": "29",
+                  "PRO": "MÁLAGA"
+                },
+                {
+                  "CCOM": "17",
+                  "CPRO": "30",
+                  "PRO": "REGIÓN DE MURCIA"
+                },
+                {
+                  "CCOM": "15",
+                  "CPRO": "31",
+                  "PRO": "COMUNIDAD FORAL DE NAVARRA"
+                },
+                {
+                  "CCOM": "12",
+                  "CPRO": "32",
+                  "PRO": "ORENSE"
+                },
+                {
+                  "CCOM": "08",
+                  "CPRO": "34",
+                  "PRO": "PALENCIA"
+                },
+                {
+                  "CCOM": "05",
+                  "CPRO": "35",
+                  "PRO": "LAS PALMAS"
+                },
+                {
+                  "CCOM": "12",
+                  "CPRO": "36",
+                  "PRO": "PONTEVEDRA"
+                },
+                {
+                  "CCOM": "13",
+                  "CPRO": "26",
+                  "PRO": "LA RIOJA"
+                },
+                {
+                  "CCOM": "08",
+                  "CPRO": "37",
+                  "PRO": "SALAMANCA"
+                },
+                {
+                  "CCOM": "08",
+                  "CPRO": "40",
+                  "PRO": "SEGOVIA"
+                },
+                {
+                  "CCOM": "01",
+                  "CPRO": "41",
+                  "PRO": "SEVILLA"
+                },
+                {
+                  "CCOM": "08",
+                  "CPRO": "42",
+                  "PRO": "SORIA"
+                },
+                {
+                  "CCOM": "09",
+                  "CPRO": "43",
+                  "PRO": "TARRAGONA"
+                },
+                {
+                  "CCOM": "05",
+                  "CPRO": "38",
+                  "PRO": "SANTA CRUZ DE TENERIFE"
+                },
+                {
+                  "CCOM": "02",
+                  "CPRO": "44",
+                  "PRO": "TERUEL"
+                },
+                {
+                  "CCOM": "07",
+                  "CPRO": "45",
+                  "PRO": "TOLEDO"
+                },
+                {
+                  "CCOM": "10",
+                  "CPRO": "46",
+                  "PRO": "VALENCIA"
+                },
+                {
+                  "CCOM": "08",
+                  "CPRO": "47",
+                  "PRO": "VALLADOLID"
+                },
+                {
+                  "CCOM": "16",
+                  "CPRO": "48",
+                  "PRO": "VIZCAYA"
+                },
+                {
+                  "CCOM": "08",
+                  "CPRO": "49",
+                  "PRO": "ZAMORA"
+                },
+                {
+                  "CCOM": "02",
+                  "CPRO": "50",
+                  "PRO": "ZARAGOZA"
+                },
+                {
+                  "CCOM": "18",
+                  "CPRO": "51",
+                  "PRO": "CEUTA"
+                },
+                {
+                  "CCOM": "19",
+                  "CPRO": "52",
+                  "PRO": "MELILLA"
+                }
+              ]
+}
