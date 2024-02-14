@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row" *ngIf="this.listaLibros.length !== 0; else sinlibros">
+    <div class="row">
+      <div class="col-4" *ngFor="let unlibro of this.listaLibros">
+        <app-mini-libro [libroAPintar]="unlibro"></app-mini-libro>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #sinlibros>
+    <div class="row">
+      <div class="col">
+        <p>No se han encontrado LIBROS de esa categoria... intentalo d nuevo con otra</p>
+      </div>
+    </div>
+  </ng-template>
+</div>

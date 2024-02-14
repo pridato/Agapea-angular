@@ -32,7 +32,7 @@ export class LoginComponentComponent {
       this.storageService.AlmacenarDatosCliente(_respuesta.datoscliente || this.cliente)
       this.storageService.AlmacenarJWT(_respuesta.token || '')
 
-      this.router.navigateByUrl('/Tienda/Libros/2-10')
+      this.router.navigateByUrl('/Tienda/Libros/?idcat=2-10')
     }else{
       console.log(_respuesta)
     }

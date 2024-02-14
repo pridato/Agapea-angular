@@ -14,6 +14,9 @@ import { EmailfilterdomainDirective } from './directives/emailfilterdomain.direc
 import { TOKEN_SERVICIO_STORAGE } from './services/injectiontokenstorageservice';
 import { SubjectstorageService } from './services/subjectstorage.service';
 import { PanelTiendaComponent } from './components/zonaTienda/panelTienda/panel-tienda.component';
+import { LibrosComponent } from './components/zonaTienda/libros/libros.component';
+import { MiniLibroComponent } from './components/zonaTienda/minilibro/mini-libro.component';
+import { RedondeoCantidadPipe } from './pipes/redondeo-cantidad.pipe';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,10 @@ import { PanelTiendaComponent } from './components/zonaTienda/panelTienda/panel-
     RegistroOKComponent,
     ComprobarexistemailDirective,
     EmailfilterdomainDirective,
-    PanelTiendaComponent
+    PanelTiendaComponent,
+    LibrosComponent,
+    MiniLibroComponent,
+    RedondeoCantidadPipe
   ],
   imports: [
     BrowserModule,

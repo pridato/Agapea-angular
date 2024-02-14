@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ICliente } from '../models/cliente.model';
 import { Observable, lastValueFrom } from 'rxjs';
 import { IRestMessage } from '../models/restMessage.model';
+import { ILibro } from '../models/libro.model';
 
 @Injectable({
   providedIn: 'root'
@@ -47,10 +48,18 @@ export class RestnodeService {
     return this._httpCliente.get(`http://localhost:3000/api/Cliente/ComprobarEmail?email=${email}`) as Observable<IRestMessage>
   }
 
+
   //#endregion
 
   //#region ZONA TIENDA 
 
+  
+
+  public RecuperarLibros(idcat:string) : Promise<ILibro[]> {
+    return lastValueFrom(
+     this._httpCliente.get(`http://localhost:3000/api/Tienda/RecuperarLibros?idcat=${idcat}`) as Observable<ILibro[]>
+    )
+  }
   //#endregion
 
   //#region ZONA PEDIDO

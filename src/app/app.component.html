@@ -1,4 +1,5 @@
-  <header>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+<header id="header">
   <div class="container-lg w-100 m-0 p-0">
       <div class="row w-100">
           <div class="col-12">
@@ -14,18 +15,17 @@
                               <a href="#" class="btn btn-negro btn-sm p-0 pe-3">
                                   <img src="../../assets/images/botonMINIcontacto.png">
                               </a>
-                              <!-- si hay un objeto sesion CLIENTE muestro el boton con su email y nombre y apellidos para q acceda a su PANEL, sino al LOGIN-->
+
                               <ng-container *ngIf="(cliente$ | async) as datoscliente; else foto">
-                                <a [routerLink]="['/Cliente/Panel/InicioPanel']" routerLinkActive="router-link-active"  class="btn bg-negro btn-sm">
-                                  <span style="color:white">{{ datoscliente.cuenta.email }}</span>
-                                </a>
-                                <button class="pl-3 btn btn-sm btn-outline-secondary"><i class="fa-solid fa-right-from-bracket"></i></button>
+                                  <a [routerLink]="['/Cliente/Panel/InicioPanel']" routerLinkActive="router-link-active"  class="btn bg-negro btn-sm">
+                                      <span style="color:white">{{ datoscliente.cuenta.email }}</span>
+                                  </a>
                               </ng-container>
-                              
+
                               <ng-template #foto>
-                                <a [routerLink]="['/Cliente/Login']" routerLinkActive="router-link-active"  class="btn bg-negro btn-sm p-0">
-                                  <img src="../../assets/images/botonMINIlogin.png">
-                                </a>
+                                  <a [routerLink]="['/Cliente/Login']" routerLinkActive="router-link-active"  class="btn bg-negro btn-sm p-0">
+                                      <img src="../../assets/images/botonMINIlogin.png">
+                                  </a>
                               </ng-template>
                           </div>      
                       </div>
@@ -48,27 +48,27 @@
                                       <div class="p-1 flex-fill">
                                           <input class="border-0 w-100 h-100" type="text" name="cajatext" placeholder="Buscar por libro, autor, ISBN..."/>
                                       </div>
-                                     <div class="bg-primary p-2 border border-5 border-end-0 border-top-0 border-bottom-0 text-center" style="width: 10%">
-                                              <a id="botonBuscar"  onclick="javascript:document.forms[0].submit()"><img src="../../assets/images/lupa.png" width="auto" height="20" /></a>
+                                      <div class="bg-primary p-2 border border-5 border-end-0 border-top-0 border-bottom-0 text-center" style="width: 10%">
+                                          <a id="botonBuscar" >
+                                              <img src="../../assets/images/lupa.png" width="auto" height="20" />
+                                          </a>
                                       </div>
                                   </div>
-
                               </div>
                           </form>
                       </div>
                       <div class="col-4 p-0 pe-5 d-flex justify-content-center">
                           <div class="h-100">
-                                  <!-- mini carrito -->
+                              <!-- mini carrito -->
                               <a href="http://localhost:4200/Pedido/MostrarPedido" class="d-flex flex-row align-items-center h-100 bg-white border border-1 btn btn-light p-1">
                                   <div class="position-relative mx-2">
-                                  <!--<img src="~/images/boton_mini_carrito.png" />--><i class="fa-solid fa-cart-shopping fa-xl"></i>
+                                      <i class="fa-solid fa-cart-shopping fa-xl"></i>
                                       <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                                           0
                                           <span class="visually-hidden">unread messages</span>
                                       </span>
                                   </div>
                                   <span class="ps-2 pe-1"> <small>Total:</small> <span class="text-end" id="precioCarrito" style="width: 110px; font-size: 1.5em"><strong>0,00 €</strong></span></span>
-                                  
                                   <img class="align-content-lg-center mx-2" src="../../assets/images/boton_flecha_minicarrito.png"/>
                               </a>
                           </div>
@@ -83,26 +83,26 @@
 
 <div class="container">
   <div class="row">
-    <ng-container
-    *ngIf="! (this.routerEvent$ | async)!.url.match(this.patron); then tienda; else cliente">
-  </ng-container>
-  
-  <ng-template #tienda>
-    <div class="col-3">
-      <app-panel-tienda></app-panel-tienda>
-  </div>
-  
-  <div class="col-9">
-      <router-outlet></router-outlet>
-  </div>
-  </ng-template>
-  <ng-template #cliente>
-    <div class="col-12">
-      <router-outlet></router-outlet>
-  </div>
-  </ng-template>
+      <ng-container *ngIf="!(routerEvent$ | async)?.url?.match(patron); then tienda else cliente"></ng-container>
+      
+      <ng-template #tienda>
+          <div class="col-3">
+              <app-panel-tienda></app-panel-tienda>
+          </div>
+          <div class="col-9">
+              <router-outlet></router-outlet>
+          </div>
+      </ng-template>
+      
+      <ng-template #cliente>
+          <div class="col-12">
+              <router-outlet></router-outlet>
+          </div>
+      </ng-template>
   </div>
 </div>
+
 <footer></footer>
+
 
 

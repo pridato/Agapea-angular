@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { RegistroComponentComponent } from './components/zonaCliente/registro/registro.component';
 import { LoginComponentComponent } from './components/zonaCliente/login/login.component';
 import { RegistroOKComponent } from './components/zonaCliente/registroOK/registro-ok.component';
+import { LibrosComponent } from './components/zonaTienda/libros/libros.component';
 
 const routes: Routes = [
   {path: 'Cliente', 
@@ -12,7 +13,12 @@ const routes: Routes = [
       {path: 'RegistroOK', component: RegistroOKComponent}
     ]
   },
-  {path: '', redirectTo: 'Cliente/Registro', pathMatch: 'full'}
+  {path: 'Tienda',
+    children: [
+      {path: 'Libros/:idcat?', component: LibrosComponent},
+    ]
+  },
+  {path: '', redirectTo:'Tienda/Libros/?idcat=2-10', pathMatch: 'full'}
 ];
 
 @NgModule({
