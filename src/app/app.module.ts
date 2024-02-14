@@ -13,6 +13,7 @@ import { ComprobarexistemailDirective } from './directives/comprobarexistemail.d
 import { EmailfilterdomainDirective } from './directives/emailfilterdomain.directive';
 import { TOKEN_SERVICIO_STORAGE } from './services/injectiontokenstorageservice';
 import { SubjectstorageService } from './services/subjectstorage.service';
+import { PanelTiendaComponent } from './components/zonaTienda/panelTienda/panel-tienda.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { SubjectstorageService } from './services/subjectstorage.service';
     RegistroComponentComponent,
     RegistroOKComponent,
     ComprobarexistemailDirective,
-    EmailfilterdomainDirective
+    EmailfilterdomainDirective,
+    PanelTiendaComponent
   ],
   imports: [
     BrowserModule,

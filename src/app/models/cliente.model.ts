@@ -4,7 +4,7 @@ import { IPedido } from "./pedido.model";
 export interface ICliente {
   nombre:      string;
     apellidos:   string;
-    cuenta:      {  email: string, login?:string, password:string, cuentaActiva:boolean, imagenAvatarBASE64?:string };
+    cuenta:      {  email: string, login?:string, password?:string, cuentaActiva:boolean, imagenAvatarBASE64?:string };
     telefono:    string;
     direcciones?: IDireccion[];
     pedidos?:     IPedido[];
