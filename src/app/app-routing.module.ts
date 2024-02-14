@@ -4,6 +4,7 @@ import { RegistroComponentComponent } from './components/zonaCliente/registro/re
 import { LoginComponentComponent } from './components/zonaCliente/login/login.component';
 import { RegistroOKComponent } from './components/zonaCliente/registroOK/registro-ok.component';
 import { LibrosComponent } from './components/zonaTienda/libros/libros.component';
+import { DetallesLibroComponent } from './components/zonaTienda/detallesLibro/detalles-libro.component';
 
 const routes: Routes = [
   {path: 'Cliente', 
@@ -16,6 +17,7 @@ const routes: Routes = [
   {path: 'Tienda',
     children: [
       {path: 'Libros/:idcat?', component: LibrosComponent},
+      {path: 'MostrarLibro', component: DetallesLibroComponent}
     ]
   },
   {path: '', redirectTo:'Tienda/Libros/?idcat=2-10', pathMatch: 'full'}

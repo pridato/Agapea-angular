@@ -67,10 +67,9 @@ export class RestnodeService {
     )
   }
 
-  public RecuperarLibro(isbn13:string) : Promise<ILibro> {
-    return lastValueFrom(
-      this._httpCliente.get(`http://localhost:3000/api/Tienda/RecuperarLibro?isbn=${isbn13}`) as Observable<ILibro>
-    )
+  public RecuperarLibro(isbn13:string) : Observable<ILibro> {
+      console.log(isbn13)
+      return this._httpCliente.get(`http://localhost:3000/api/Tienda/RecuperarLibro?isbn=${isbn13}`) as Observable<ILibro>
   }
   //#endregion
 

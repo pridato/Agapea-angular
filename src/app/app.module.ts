@@ -17,6 +17,7 @@ import { PanelTiendaComponent } from './components/zonaTienda/panelTienda/panel-
 import { LibrosComponent } from './components/zonaTienda/libros/libros.component';
 import { MiniLibroComponent } from './components/zonaTienda/minilibro/mini-libro.component';
 import { RedondeoCantidadPipe } from './pipes/redondeo-cantidad.pipe';
+import { DetallesLibroComponent } from './components/zonaTienda/detallesLibro/detalles-libro.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { RedondeoCantidadPipe } from './pipes/redondeo-cantidad.pipe';
     PanelTiendaComponent,
     LibrosComponent,
     MiniLibroComponent,
-    RedondeoCantidadPipe
+    RedondeoCantidadPipe,
+    DetallesLibroComponent
   ],
   imports: [
     BrowserModule,
