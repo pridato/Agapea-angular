@@ -4,6 +4,7 @@ import { ICliente } from '../models/cliente.model';
 import { Observable, lastValueFrom } from 'rxjs';
 import { IRestMessage } from '../models/restMessage.model';
 import { ILibro } from '../models/libro.model';
+import { ICategoria } from '../models/categoria.model';
 
 @Injectable({
   providedIn: 'root'
@@ -53,7 +54,12 @@ export class RestnodeService {
 
   //#region ZONA TIENDA 
 
-  
+  public RecuperarCategorias(idcat:string): Promise<ICategoria[]> {
+    if (!! idcat) idcat = '2-10'
+    return lastValueFrom(
+      this._httpCliente.get<ICategoria[]>(`http://localhost:3000/api/Tienda/RecuperarCategorias?idcat=${idcat}`)
+    )
+  }
 
   public RecuperarLibros(idcat:string) : Promise<ILibro[]> {
     return lastValueFrom(

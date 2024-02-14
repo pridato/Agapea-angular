@@ -1,1 +1,14 @@
-<p>panel-tienda works!</p>
+<h6 class="text-dark mt-4 ms-3">CATEGORÍAS</h6>
+
+<div class="list-group">
+  <ng-container *ngIf="listaCategorias.length > 0; else noCategories">
+    <a *ngFor="let cat of listaCategorias;" 
+       (click)="GoToCateogria($event, cat)" 
+       class="list-group-item list-group-item-action border border-end-0 border-start-0 text-dark">
+       {{ cat.NombreCategoria }}
+    </a>
+  </ng-container>
+  <ng-template #noCategories>
+    <div>sin una puta categoria...</div>
+  </ng-template>
+</div>
