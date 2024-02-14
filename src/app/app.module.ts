@@ -11,6 +11,8 @@ import { RegistroOKComponent } from './components/zonaCliente/registroOK/registr
 import { RestnodeService } from './services/restnode.service';
 import { ComprobarexistemailDirective } from './directives/comprobarexistemail.directive';
 import { EmailfilterdomainDirective } from './directives/emailfilterdomain.directive';
+import { TOKEN_SERVICIO_STORAGE } from './services/injectiontokenstorageservice';
+import { SubjectstorageService } from './services/subjectstorage.service';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,8 @@ import { EmailfilterdomainDirective } from './directives/emailfilterdomain.direc
     FormsModule
   ],
   providers: [
-    RestnodeService
+    RestnodeService,
+    {provide: TOKEN_SERVICIO_STORAGE, useClass: SubjectstorageService},
   ],
   bootstrap: [AppComponent]
 })
